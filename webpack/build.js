@@ -1,11 +1,12 @@
 const path = require("path");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     mode: "production",
     entry: path.resolve(path.resolve("."), "src/index.tsx"),
     output: {
         path: path.resolve(path.resolve("."), "dist"),
-        filename: "index.js",
+        filename: "[name].[contenthash].js",
     },
 
     module: {
@@ -22,6 +23,9 @@ module.exports = {
         extensions: [".tsx", ".ts", ".js"]
     },
 
-    optimization: {
-    },
+    plugins: [
+        new CleanWebpackPlugin(),
+    ],
+
+    optimization: {},
 }
