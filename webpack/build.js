@@ -1,5 +1,6 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: "production",
@@ -9,22 +10,29 @@ module.exports = {
         filename: "[name].[contenthash].js",
     },
 
+    resolve: {
+        extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
+        modules: [
+            path.resolve(__dirname, "../node_modules"),
+            path.resolve(__dirname, "../src")
+        ]
+    },
+
     module: {
         rules: [
             {
                 test: /\.tsx?$/,
                 use: "ts-loader",
-                exclude: /^node_modules$/,
+                exclude: /(node_modules)/,
             },
         ]
     },
 
-    resolve: {
-        extensions: [".tsx", ".ts", ".js"]
-    },
-
     plugins: [
         new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template: "src/index.html",
+        })
     ],
 
     optimization: {},
