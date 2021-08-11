@@ -5455,10 +5455,14 @@ json5@^0.5.1:
     array-includes "^3.1.2"
     object.assign "^4.1.2"
 
-kasper-design@^1.0.17:
-  version "1.0.17"
-  resolved "https://registry.yarnpkg.com/kasper-design/-/kasper-design-1.0.17.tgz#76e666ec76c0d2fda962e3d1767b62c67e37f97b"
-  integrity sha512-Xy1XmJlJ4I94Aftn3vJ6BEKwMnhi+vK5i5swln1JH0I+KM+meDmnZoKvIliogMwHdU6ULYr7R5d3Q5MtFo/LtA==
+kasper-design@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/kasper-design/-/kasper-design-1.1.1.tgz#09e32a490c8887ca0cde8de829ebb493946d880c"
+  integrity sha512-uxGdRSykFlBCV+8zAq68iHKuD0Kj9OutQnWHElCCT23FfiHOPkS04Px3EyDy1FG/MWedTGy+8yQOnpg1dct2HQ==
+  dependencies:
+    react "^17.0.2"
+    react-dom "^17.0.2"
+    styled-components "^5.3.0"
 
 killable@^1.0.1:
   version "1.0.1"
