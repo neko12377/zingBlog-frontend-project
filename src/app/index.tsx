@@ -1,5 +1,14 @@
-import { render } from "react-dom";
+import {render} from "react-dom";
 import React from "react";
-const HomePage = React.lazy(() => import("view/page/ModelOne/HomePage"));
+import {SuspensePage} from "./adapter/SuspensePage";
 
-render(<HomePage />, document.getElementById("root"));
+// In tsconfig.json set "module": "esnext" makes React lazy work
+const HomePage = React.lazy(() => import(/* webpackChunkName: "HomePage" */"view/page/ModelOne/HomePage"));
+
+const App = () => (
+    <SuspensePage>
+        <HomePage/>
+    </SuspensePage>
+);
+
+render(<App />, document.getElementById("root"));
