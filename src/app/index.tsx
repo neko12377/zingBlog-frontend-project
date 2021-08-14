@@ -7,7 +7,7 @@ const HomePage = React.lazy(() => import(/* webpackChunkName: "HomePage" */"view
 
 const App = () => (
     <SuspensePage>
-        <HomePage/>
+        <HomePage />
     </SuspensePage>
 );
 

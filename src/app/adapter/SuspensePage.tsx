@@ -7,5 +7,5 @@ interface SuspensePageProps {
 const FallbackPage = () => <div>Wait a minute</div>
 
 export const SuspensePage = (props: SuspensePageProps) => {
-    return <Suspense fallback={FallbackPage}>{props.children}</Suspense>
+    return <Suspense fallback={<FallbackPage />}>{props.children}</Suspense>
 }
